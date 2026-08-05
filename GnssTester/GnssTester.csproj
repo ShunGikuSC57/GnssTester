@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Title>GNSS通信検証ツール</Title>
+    <Authors>Shunji Kikuchi</Authors>
+    <Product>GNSS通信検証ツール</Product>
+    <Description></Description>
+    <Copyright>Copyright © 2026 Shunji Kikuchi</Copyright>
+    <ApplicationIcon>GnssTester.ico</ApplicationIcon>
+    <AssemblyTitle>GNSS通信検証ツール</AssemblyTitle>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Close.png" />
+    <None Remove="Images\Exit.png" />
+    <None Remove="Images\File.png" />
+    <None Remove="Images\Folder.png" />
+    <None Remove="Images\Receive.png" />
+    <None Remove="Images\Setting.png" />
+    <None Remove="Images\Stop.png" />
+    <None Remove="Images\Update.png" />
+    <None Remove="Views\Map\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="GnssTester.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Map\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Libraries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4078.44" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GisLibrary">
+      <HintPath>Libraries\GisLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Close.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Exit.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\File.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Folder.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Receive.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Setting.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Stop.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Update.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

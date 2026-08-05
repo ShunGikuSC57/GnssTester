@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GisLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:GisLibrary.GeoCalculator">
+            <summary>
+            地理座標計算
+            </summary>
+        </member>
+        <member name="M:GisLibrary.GeoCalculator.ToRadian(System.Double)">
+            <summary>
+            度をラジアンへ変換します。
+            </summary>
+            <param name="degree">度</param>
+            <returns>ラジアン</returns>
+        </member>
+        <member name="M:GisLibrary.GeoCalculator.ToDegree(System.Double)">
+            <summary>
+            ラジアンを度へ変換します。
+            </summary>
+            <param name="radian">ラジアン</param>
+            <returns>度</returns>
+        </member>
+        <member name="M:GisLibrary.GeoCalculator.GetAzimuth(GisLibrary.JapanGrid,GisLibrary.JapanGrid)">
+            <summary>
+            2点の平面直角座標から方位角を取得します。
+            </summary>
+            <param name="from">始点</param>
+            <param name="to">終点</param>
+            <returns>北を0度、時計回りの方位角。無効値の場合は0度。</returns>
+        </member>
+        <member name="M:GisLibrary.GeoCalculator.GetDistance(GisLibrary.JapanGrid,GisLibrary.JapanGrid)">
+            <summary>
+            2点の平面直角座標間の距離を取得します。
+            </summary>
+            <param name="from">始点</param>
+            <param name="to">終点</param>
+            <returns>距離（m）。無効値の場合は0。</returns>
+        </member>
+        <member name="M:GisLibrary.GeoCalculator.GetDestination(GisLibrary.JapanGrid,System.Double,System.Double)">
+            <summary>
+            起点・方位角・距離から到達点の平面直角座標を取得します。
+            </summary>
+            <param name="origin">起点</param>
+            <param name="azimuth">方位角(北を0度、時計回り)</param>
+            <param name="distance">距離(m)</param>
+            <returns>到達点</returns>
+        </member>
+        <member name="T:GisLibrary.GeoConstants">
+            <summary>
+            緯度・経度定数
+            </summary>
+        </member>
+        <member name="T:GisLibrary.GeoConstants.MaximumValue">
+            <summary>
+            最大値
+            </summary>
+        </member>
+        <member name="F:GisLibrary.GeoConstants.MaximumValue.LATITUDE">
+            <summary>緯度</summary>
+        </member>
+        <member name="F:GisLibrary.GeoConstants.MaximumValue.LONGITUDE">
+            <summary>経度</summary>
+        </member>
+        <member name="F:GisLibrary.GeoConstants.MINUTES_PER_DEGREE">
+            <summary>
+            1度あたりの分数
+            </summary>
+        </member>
+        <member name="T:GisLibrary.GeoConstants.DegreesPerTurn">
+            <summary>
+            回転角度
+            </summary>
+        </member>
+        <member name="F:GisLibrary.GeoConstants.DegreesPerTurn.HALF">
+            <summary>半回転</summary>
+        </member>
+        <member name="F:GisLibrary.GeoConstants.DegreesPerTurn.FULL">
+            <summary>1回転</summary>
+        </member>
+        <member name="T:GisLibrary.PlaneRectangularCoordinateSystemNumber">
+            <summary>
+            平面直角座標系番号
+            </summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No1">
+            <summary>長崎県・鹿児島県のうち北方北緯32度南方北緯27度西方東経128度18分東方東経130度を境界線とする区域内（奄美群島は東経130度13分までを含む)にあるすべての島、小島、環礁及び岩礁</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No2">
+            <summary>福岡県・佐賀県・熊本県・大分県・宮崎県・鹿児島県（I系に規定する区域を除く)</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No3">
+            <summary>山口県・島根県・広島県</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No4">
+            <summary>香川県・愛媛県・徳島県・高知県</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No5">
+            <summary>兵庫県・鳥取県・岡山県</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No6">
+            <summary>京都府・大阪府・福井県・滋賀県・三重県・奈良県・和歌山県</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No7">
+            <summary>石川県・富山県・岐阜県・愛知県</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No8">
+            <summary>新潟県・長野県・山梨県・静岡県</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No9">
+            <summary>東京都（XIV系、XVIII系及びXIX系に規定する区域を除く)・福島県・栃木県・茨城県・埼玉県・千葉県・群馬県・神奈川県</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No10">
+            <summary>青森県・秋田県・山形県・岩手県・宮城県</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No11">
+            <summary>小樽市・函館市・伊達市・北斗市・北海道後志総合振興局の所管区域・北海道胆振総合振興局の所管区域のうち豊浦町、壮瞥町及び洞爺湖町・北海道渡島総合振興局の所管区域・北海道檜山振興局の所管区域</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No12">
+            <summary>北海道（XI系及びXIII系に規定する区域を除く）</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No13">
+            <summary>北見市・帯広市・釧路市・網走市・根室市・北海道オホーツク総合振興局の所管区域のうち美幌町、津別町、斜里町、清里町、小清水町、訓子府町、置戸町、佐呂間町及び大空町・北海道十勝総合振興局の所管区域・北海道釧路総合振興局の所管区域・北海道根室振興局の所管区域</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No14">
+            <summary>東京都のうち北緯28度から南であり、かつ東経140度30分から東であり東経143度から西である区域</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No15">
+            <summary>沖縄県のうち東経126度から東であり、かつ東経130度から西である区域</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No16">
+            <summary>沖縄県のうち東経126度から西である区域</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No17">
+            <summary>沖縄県のうち東経130度から東である区域</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No18">
+            <summary>東京都のうち北緯28度から南であり、かつ東経140度30分から西である区域</summary>
+        </member>
+        <member name="F:GisLibrary.PlaneRectangularCoordinateSystemNumber.No19">
+            <summary>東京都のうち北緯28度から南であり、かつ東経143度から東である区域</summary>
+        </member>
+        <member name="T:GisLibrary.CoordConverter">
+            <summary>
+            緯度・経度⇔平面直角座標変換
+            </summary>
+            <remarks>
+            本ロジックは以下の実装および国土地理院の計算式を参考にしています。
+            参考（C#実装）: https://yubeshicat.hatenablog.com/entry/2020/08/26/203840 (ゆべねこの足跡)
+            公式（計算式）: https://vldb.gsi.go.jp/sokuchi/surveycalc/surveycalc/algorithm/bl2xy/bl2xy.htm
+            </remarks>
+        </member>
+        <member name="F:GisLibrary.CoordConverter.SEMI_MAJOR_AXIS">
+            <summary>
+            楕円体の長半径(ITRF座標系GRS80楕円体)
+            </summary>
+        </member>
+        <member name="F:GisLibrary.CoordConverter.INVERSE_FLATTENING">
+            <summary>
+            楕円体の逆扁平率(ITRF座標系GRS80楕円体)
+            </summary>
+        </member>
+        <member name="F:GisLibrary.CoordConverter.SCALE_FACTOR">
+            <summary>
+            平面直角座標系のX軸上における縮尺係数
+            </summary>
+        </member>
+        <member name="F:GisLibrary.CoordConverter.NO_ORIGIN_MAP">
+            <summary>
+            系番号と原点緯度・経度のマッピング
+            </summary>
+        </member>
+        <member name="M:GisLibrary.CoordConverter.ToGeoPoint(GisLibrary.JapanGrid,GisLibrary.PlaneRectangularCoordinateSystemNumber)">
+            <summary>
+            平面直角座標から緯度・経度に変換します。
+            </summary>
+            <param name="coordinate">平面直角座標</param>
+            <param name="number">平面直角座標系番号</param>
+            <returns>緯度・経度</returns>
+        </member>
+        <member name="M:GisLibrary.CoordConverter.ToJapanGrid(GisLibrary.GeoPoint,GisLibrary.PlaneRectangularCoordinateSystemNumber)">
+            <summary>
+            緯度・経度から平面直角座標に変換します。
+            </summary>
+            <param name="geoPoint">緯度・経度</param>
+            <param name="number">平面直角座標系番号</param>
+            <returns>平面直角座標</returns>
+        </member>
+        <member name="T:GisLibrary.NmeaConverter">
+            <summary>
+            NMEAフォーマットへの変換
+            </summary>
+        </member>
+        <member name="T:GisLibrary.NmeaConverter.DataType">
+            <summary>
+            データタイプ
+            </summary>
+        </member>
+        <member name="F:GisLibrary.NmeaConverter.DataType.GGA">
+            <summary>GxGGAの形式で表されたメッセージID</summary>
+        </member>
+        <member name="F:GisLibrary.NmeaConverter.DataType.RMC">
+            <summary>GxRMCの形式で表されたメッセージID</summary>
+        </member>
+        <member name="M:GisLibrary.NmeaConverter.ToGGA(GisLibrary.GeoPoint)">
+            <summary>
+            緯度・経度からGGA形式のNMEAフォーマットに変換します。
+            </summary>
+            <param name="geoPoint">緯度・経度</param>
+            <returns>GGA形式NMEAフォーマット</returns>
+        </member>
+        <member name="M:GisLibrary.NmeaConverter.ToGGA(GisLibrary.JapanGrid,GisLibrary.PlaneRectangularCoordinateSystemNumber)">
+            <summary>
+            平面直角座標からGGA形式のNMEAフォーマットに変換します。
+            </summary>
+            <param name="japanGrid">平面直角座標</param>
+            <param name="number">平面直角座標系番号</param>
+            <returns>GGA形式NMEAフォーマット</returns>
+        </member>
+        <member name="M:GisLibrary.NmeaConverter.ToRMC(GisLibrary.GeoPoint,System.Double,System.Double)">
+            <summary>
+            緯度・経度からRMC形式のNMEAフォーマットに変換します。
+            </summary>
+            <param name="geoPoint">緯度・経度</param>
+            <param name="knot">対地速度（ノット）</param>
+            <param name="azimuth">方位角</param>
+            <returns>RCM形式NMEAフォーマット</returns>
+        </member>
+        <member name="M:GisLibrary.NmeaConverter.ToRMC(GisLibrary.JapanGrid,System.Double,System.Double,GisLibrary.PlaneRectangularCoordinateSystemNumber)">
+            <summary>
+            平面直角座標からRMC形式のNMEAフォーマットに変換します。
+            </summary>
+            <param name="japanGrid">平面直角座標</param>
+            <param name="knot">対地速度（ノット）</param>
+            <param name="azimuth">方位角</param>
+            <param name="number">平面直角座標系番号</param>
+            <returns>RCM形式NMEAフォーマット</returns>
+        </member>
+        <member name="M:GisLibrary.NmeaConverter.ToDm(System.Double,System.Boolean)">
+            <summary>
+            十進度形式の緯度・経度をDM形式文字列に変換します。
+            </summary>
+            <param name="value">緯度もしくは経度</param>
+            <param name="isLatitude">緯度の場合はtrue</param>
+            <returns>DM形式文字列</returns>
+        </member>
+        <member name="M:GisLibrary.NmeaConverter.ToDms(System.String,System.Boolean)">
+            <summary>
+            度分形式（ddmm.mmmm）の文字列を十進度に変換します。
+            </summary>
+            <param name="ddmmText">度分形式の文字列（緯度は"ddmm.mmmm"、経度は"dddmm.mmmm"）</param>
+            <param name="isLatitude">緯度の場合はtrue</param>
+            <returns>十進度。形式・値が不正な場合はNaN。</returns>
+        </member>
+        <member name="M:GisLibrary.NmeaConverter.ToNmeaPosition(GisLibrary.GeoPoint)">
+            <summary>
+            緯度・経度からNMEAフォーマットの位置部分の文字列に変換します。
+            </summary>
+            <param name="geoPoint">緯度・経度</param>
+            <returns>NMEAフォーマットでの位置部分文字列</returns>
+        </member>
+        <member name="M:GisLibrary.NmeaConverter.ToNmeaAngle(System.Double,System.Boolean)">
+            <summary>
+            緯度・経度を度分形式に変換し東西南北も付与します。
+            </summary>
+            <param name="value">緯度・経度の値</param>
+            <param name="isLatitude">緯度の場合はtrue</param>
+            <returns>度分文字列</returns>
+        </member>
+        <member name="M:GisLibrary.NmeaConverter.ToNmeaSentence(System.String)">
+            <summary>
+            チェックサムを付与したNMEAフォーマットへ変換します。
+            </summary>
+            <param name="data">データ部分</param>
+            <returns>チェックサムを付与したNMEAフォーマット</returns>
+        </member>
+        <member name="T:GisLibrary.GeoPoint">
+            <summary>
+            緯度・経度
+            </summary>
+        </member>
+        <member name="P:GisLibrary.GeoPoint.Latitude">
+            <summary>
+            緯度を取得または設定します。
+            </summary>
+        </member>
+        <member name="P:GisLibrary.GeoPoint.Longitude">
+            <summary>
+            経度を取得または設定します。
+            </summary>
+        </member>
+        <member name="M:GisLibrary.GeoPoint.#ctor(System.Double,System.Double)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="latitude">緯度</param>
+            <param name="longitude">経度</param>
+        </member>
+        <member name="T:GisLibrary.JapanGrid">
+            <summary>
+            平面直角座標
+            </summary>
+        </member>
+        <member name="P:GisLibrary.JapanGrid.X">
+            <summary>
+            X座標を取得または設定します。
+            </summary>
+        </member>
+        <member name="P:GisLibrary.JapanGrid.Y">
+            <summary>
+            Y座標を取得または設定します。
+            </summary>
+        </member>
+        <member name="M:GisLibrary.JapanGrid.#ctor(System.Double,System.Double)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="x">X座標</param>
+            <param name="y">Y座標</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,77 @@
+﻿<Window x:Class="GnssTester.Views.ConnectionSettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:GnssTester.UserControls"
+        xmlns:local="clr-namespace:GnssTester.Views"
+        mc:Ignorable="d"
+        Title="通信設定" Height="450" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" SizeToContent="Height" Background="#DCE7F5" FontSize="20" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="方法"/>
+            <ComboBox Grid.Row="1" x:Name="cmbCommunicationMethod"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="ポート"/>
+            <uc:NumericUpDown Grid.Row="1" x:Name="numPortNumber" MinValue="1024" MaxValue="65535"/>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="フォーマット"/>
+            <ComboBox Grid.Row="1" x:Name="cmbReceiveFormat"/>
+        </Grid>
+        <Grid Grid.Row="6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <CheckBox Grid.Column="8" x:Name="chkOutput" Content="受信結果を出力する"/>
+        </Grid>
+        <Grid Grid.Row="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" x:Name="btnUpdate" Template="{StaticResource BlueButton}" Click="btnUpdate_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="0,8,5,8" Width="20" Source="/Images/Update.png"/>
+                        <TextBlock FontWeight="Bold" Text="更新"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="3" x:Name="btnClose" Template="{StaticResource GrayButton}" Click="btnClose_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="0,8,5,8" Source="/Images/Close.png"/>
+                        <TextBlock FontWeight="Bold" Text="閉じる"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,77 @@
+﻿<Window x:Class="GnssTester.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns:local="clr-namespace:GnssTester"
+        mc:Ignorable="d"
+        Title="GNSS通信検証ツール" Height="800" Width="1200" WindowStartupLocation="CenterScreen" Background="#F5F5F5" FontSize="20" SourceInitialized="Window_SourceInitialized" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition MinWidth="100"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="btnStartReceive" Template="{StaticResource TealButton}" Click="btnStartReceive_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="0,8,5,8" Width="20" Source="/Images/Receive.png"/>
+                        <TextBlock FontWeight="Bold" Text="受信開始"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="0" x:Name="btnStopReceive" Template="{StaticResource RedButton}" Click="btnStopReceive_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="0,8,5,8" Width="20" Source="/Images/Stop.png"/>
+                        <TextBlock FontWeight="Bold" Text="受信停止"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <TextBlock Grid.Column="2" Text="平面直角座標系" ToolTip="受信するデータが平面直角座標の以外の場合は設定不要です。"/>
+            <ComboBox Grid.Column="4" x:Name="cmbGridSystemNumber" ToolTip="受信するデータが平面直角座標の以外の場合は設定不要です。" SelectionChanged="cmbGridSystemNumber_SelectionChanged"/>
+            <Button Grid.Column="6" x:Name="btnOpenCsvFolder" Template="{StaticResource DefaultButton}" Foreground="#000000" Click="btnOpenCsvFolder_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="0,8,5,8" Width="20" Source="/Images/Folder.png"/>
+                        <TextBlock FontWeight="Bold" Text="出力フォルダを開く"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="8" x:Name="btnConnectionSetting" Template="{StaticResource BlueButton}" Click="btnConnectionSetting_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="0,8,5,8" Width="20" Source="/Images/Setting.png"/>
+                        <TextBlock FontWeight="Bold" Text="通信設定"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Grid.Column="10" x:Name="btnExit" Template="{StaticResource GrayButton}" Click="btnExit_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="0,8,5,8" Source="/Images/Exit.png"/>
+                        <TextBlock FontWeight="Bold" Text="終了"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </Grid>
+        <Border Grid.Row="2" BorderBrush="#000000" BorderThickness="1">
+            <wv2:WebView2 x:Name="wvMap"/>
+        </Border>
+    </Grid>
+</Window>
