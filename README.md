@@ -56,6 +56,7 @@ TCP/UDPで送られてくる位置情報（緯度経度・平面直角座標・N
 - [Microsoft.Web.WebView2](https://learn.microsoft.com/microsoft-edge/webview2/) - 地図表示
 - [Leaflet](https://leafletjs.com/) - 地図描画（WebView2内で使用）
 - 地図タイル: [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors
+- [GisLibrary](https://github.com/ShunGikuSC57/GnssSimulator/tree/master/GisLibrary) - 緯度経度⇔平面直角座標の変換等に使用。GnssSimulatorからdllとして流用しているため、コードを見たい場合はリンク先を参照してください。
 
 ---
 ## ライセンス
