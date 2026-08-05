@@ -50,7 +50,7 @@ namespace GnssTester.Services
             TcpListener? listener = null;
             try
             {
-                listener = new TcpListener(IPAddress.Parse("0.0.0.0"), port);
+                listener = new TcpListener(IPAddress.Any, port);
                 listener.Start();
                 while (!token.IsCancellationRequested)
                 {
