@@ -4,8 +4,6 @@ GNSS/GPS対応アプリの検証ツール、GnssSimulator用の受信確認ツ�
 
 TCP/UDPで送られてくる位置情報（緯度経度・平面直角座標・NMEA）を受信し、地図上にその位置をプロットします。「送信側のアプリが、本当に想定通りの正しい位置情報を送れているか」を、目で見て確認するためのツールです。
 
-https://github.com/ShunGikuSC57/GnssTester
-
 ![Main](Docs/Images/Main.png)
 
 ---
