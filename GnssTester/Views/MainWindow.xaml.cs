@@ -182,6 +182,7 @@ namespace GnssTester.Views
             // 地図初期化
             var environment = await CoreWebView2Environment.CreateAsync(userDataFolder: USER_DATA_DIR);
             await wvMap.EnsureCoreWebView2Async(environment);
+            wvMap.CoreWebView2.Settings.UserAgent = "GnssSimulator/1.0 (+https://github.com/ShunGikuSC57/GnssTester)";
             wvMap.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             using var stream = assembly.GetManifestResourceStream(MAIN_MAP_HTML_NAME);
